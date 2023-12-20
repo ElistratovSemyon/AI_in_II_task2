@@ -218,22 +218,22 @@ class SemanticCompressor:
                     timesteps = sample_timesteps,
                     target_image=target_image
                 )
-                # denoising
-                img = self.decoder.p_sample_loop(
-                    unet=unet,
-                    shape=shape,
-                    image_embed = image_embed,
-                    text_encodings = text_encodings,
-                    cond_scale = unet_cond_scale,
-                    predict_x_start = predict_x_start,
-                    learned_variance = learned_variance,
-                    clip_denoised = not is_latent_diffusion,
-                    lowres_cond_img = lowres_cond_img,
-                    lowres_noise_level = lowres_noise_level,
-                    is_latent_diffusion = is_latent_diffusion,
-                    noise_scheduler = noise_scheduler,
-                    timesteps = sample_timesteps,
-                )
+
+                # img = self.decoder.p_sample_loop(
+                #     unet=unet,
+                #     shape=shape,
+                #     image_embed = image_embed,
+                #     text_encodings = text_encodings,
+                #     cond_scale = unet_cond_scale,
+                #     predict_x_start = predict_x_start,
+                #     learned_variance = learned_variance,
+                #     clip_denoised = not is_latent_diffusion,
+                #     lowres_cond_img = lowres_cond_img,
+                #     lowres_noise_level = lowres_noise_level,
+                #     is_latent_diffusion = is_latent_diffusion,
+                #     noise_scheduler = noise_scheduler,
+                #     timesteps = sample_timesteps,
+                # )
                 img = vae.decode(img)
             if exists(stop_at_unet_number) and stop_at_unet_number == unet_number:
                 break
