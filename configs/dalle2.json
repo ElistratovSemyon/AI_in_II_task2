@@ -6,7 +6,7 @@
                 "default_cond_scale": [1.7],
                 "load_model_from": {
                     "load_type": "local",
-                    "path": "./weights/decoder_latest.pth",
+                    "path": "./weights/decoder_1.pth",
                     "cache_dir": "./models",
                     "filename_override": "new_decoder.pth"
                 },
@@ -21,7 +21,7 @@
                 "unet_numbers": [2],
                 "load_model_from": {
                     "load_type": "local",
-                    "path": "./weights/decoder_2_latest.pth",
+                    "path": "./weights/decoder_2.pth",
                     "cache_dir": "./models",
                     "filename_override": "second_decoder.pth"
                 },
@@ -38,7 +38,7 @@
     "prior": {
         "load_model_from": {
             "load_type": "local",
-            "path": "./weights/prior_best.pth",
+            "path": "./weights/prior.pth",
             "cache_dir": "./models",
             "filename_override": "prior.pth"
         },
